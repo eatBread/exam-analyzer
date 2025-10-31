@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四校数学成绩分析系统测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>四校数学成绩分析系统测试</h1>
+    
+    <div class="test-section">
+        <h2>功能说明</h2>
+        <p>本系统已成功修改以支持四校数学成绩分析，主要功能包括：</p>
+        <ul>
+            <li>✅ 读取包含学校、考号、班级、姓名、数学、校内名次、联考名次的Excel文件</li>
+            <li>✅ 支持灵活配置分析参数（学科、满分、及格线、优秀线等）</li>
+            <li>✅ 针对九年级数学120分满分进行优化分析</li>
+            <li>✅ 自动解析数据并生成各校各班统计</li>
+            <li>✅ 生成学校排名、班级排名等分析报告</li>
+            <li>✅ 支持导出Excel格式的分析报告</li>
+            <li>✅ 支持导出PDF格式的分析报告</li>
+            <li>✅ 提供可视化图表展示</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>使用方法</h2>
+        <ol>
+            <li>启动开发服务器：<code>npm run dev</code></li>
+            <li>在浏览器中打开 <code>http://localhost:3000</code></li>
+            <li>点击"分析配置"标签页，选择"九年级数学"预设配置</li>
+            <li>点击"文件上传"标签页，上传 <code>example/四校数学.xls</code> 文件</li>
+            <li>查看"数据分析"页面的统计结果</li>
+            <li>查看"成绩表格"页面的详细数据</li>
+            <li>使用右上角的"导出报告"按钮导出Excel或PDF</li>
+        </ol>
+    </div>
+
+    <div class="test-section">
+        <h2>分析配置说明</h2>
+        <p>系统支持灵活的分析配置，针对不同学科和年级：</p>
+        <ul>
+            <li><strong>预设配置</strong>：九年级数学（120分满分，72分及格，108分优秀）</li>
+            <li><strong>自定义配置</strong>：可设置学科名称、年级、满分、及格线、优秀线</li>
+            <li><strong>实时调整</strong>：修改配置后自动重新分析数据</li>
+            <li><strong>智能分布</strong>：根据配置自动调整分数分布区间</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>数据格式要求</h2>
+        <p>Excel文件应包含以下列（第一行为表头）：</p>
+        <ul>
+            <li><strong>学校</strong>：学校名称</li>
+            <li><strong>考号</strong>：学生考号</li>
+            <li><strong>班级</strong>：班级名称</li>
+            <li><strong>姓名</strong>：学生姓名</li>
+            <li><strong>数学</strong>：数学成绩</li>
+            <li><strong>校内名次</strong>：校内排名</li>
+            <li><strong>联考名次</strong>：联考排名</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>分析报告内容</h2>
+        <p>系统将生成包含以下内容的分析报告：</p>
+        <ul>
+            <li><strong>总体统计</strong>：总学生数、总学校数、总班级数、整体平均分、及格率、优秀率</li>
+            <li><strong>学校统计</strong>：各学校排名、学生人数、班级数、平均分、及格率、优秀率</li>
+            <li><strong>班级统计</strong>：各班级总排名、校内排名、平均分、及格率、优秀率</li>
+            <li><strong>学生成绩表</strong>：包含联考排名、校内排名、学校、班级、姓名、考号、成绩等详细信息</li>
+            <li><strong>可视化图表</strong>：各学校对比图、各班级对比图、成绩分布图等</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>导出格式</h2>
+        <ul>
+            <li><strong>Excel格式</strong>：包含多个工作表的完整分析报告</li>
+            <li><strong>PDF格式</strong>：包含统计表格和图表的PDF报告</li>
+        </ul>
+    </div>
+</body>
+</html>
