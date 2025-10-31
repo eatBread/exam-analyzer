@@ -126,9 +126,9 @@ const AllSubjectsAnalysisTable: React.FC<AllSubjectsAnalysisTableProps> = ({
       // 计算各率
       const totalFullScore = config.subjects.reduce((sum, s) => sum + s.fullScore, 0);
       const totalPassScore = config.subjects.reduce((sum, s) => sum + s.passScore, 0);
-      const totalExcellentScore = config.subjects.reduce((sum, s) => sum + s.excellentScore, 0);
       
-      const totalExcellentCount = allTotalScores.filter(score => score >= totalExcellentScore).length;
+      // 优良率按80%计算
+      const totalExcellentCount = allTotalScores.filter(score => (score / totalFullScore) >= 0.8).length;
       const totalPassCount = allTotalScores.filter(score => score >= totalPassScore).length;
       const totalLowScoreCount = allTotalScores.filter(score => score < totalPassScore * 0.2).length;
       
@@ -150,8 +150,8 @@ const AllSubjectsAnalysisTable: React.FC<AllSubjectsAnalysisTableProps> = ({
       // 计算各率
       const totalFullScore = config.subjects.reduce((sum, s) => sum + s.fullScore, 0);
       const totalPassScore = config.subjects.reduce((sum, s) => sum + s.passScore, 0);
-      const totalExcellentScore = config.subjects.reduce((sum, s) => sum + s.excellentScore, 0);
       
+      // 优良率按80%计算
       const totalExcellentCount = schoolTotalScores.filter(score => (score / totalFullScore) >= 0.8).length;
       const totalPassCount = schoolTotalScores.filter(score => score >= totalPassScore).length;
       const totalLowScoreCount = schoolTotalScores.filter(score => score < totalPassScore * 0.2).length;
